@@ -117,11 +117,11 @@ sub gen_profile {
         print $FH "\t\t{\n\t\t\t";
         print $FH "sensor = \"".$sensors[$i]->{key}."\";\n\t\t\t";
         
-        if ($sensors[$i]->{low}) {
+        if ($sensors[$i]->{low} and $sensors[$i]->{low} ne "(null)") {
             print $FH "floor = ".$sensors[$i]->{low}.";\n\t\t\t";
         }
 
-        if ($sensors[$i]->{high}) {
+        if ($sensors[$i]->{high} and $sensors[$i]->{high} ne "(null)") {
             print $FH "ceiling = ".$sensors[$i]->{high}.";\n\t\t\t";
         }
 
