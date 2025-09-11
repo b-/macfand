@@ -161,7 +161,7 @@ struct modelProfile *read_profile(struct mfdconfig inscfg, char *modelID)
 
     int count, n = 0, k, v, n2, x;
 
-    for (n = 0; n < 50; n++)
+    for (n = 0; n < MAXSENSORS; n++)
     {
         tmpprofile->sensordesc[n].id = calloc(SENSKEY_MAXLEN, sizeof(char));
         tmpprofile->sensordesc[n].desc = calloc(500, sizeof(char));

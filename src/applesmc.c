@@ -75,7 +75,7 @@ void find_applesmc(struct applesmc *smc)
     char *name_path = calloc(PATH_MAX, sizeof(char));
 
     smc->fans = calloc(MAXFANS, sizeof(struct fan));
-    smc->sensors = calloc(50, sizeof(struct sensor));
+    smc->sensors = calloc(MAXSENSORS, sizeof(struct sensor));
 
     DIR *fd_dir;
     smc->path[0] = 0;
@@ -344,7 +344,7 @@ void read_sensors(struct applesmc *smc, struct mfdconfig cfg)
         {
             if (cfg.fanctrl[i].sensor_cnt > 0)
             {
-                for (k = 0; k < 50; k++)
+                for (k = 0; k < MAXSENSORS; k++)
                 {
                     if (strcmp(cfg.fanctrl[i].sensors[j], smc->sensors[k].key) == 0 && smc->sensors[k].blacklisted != true)
                     { 
@@ -355,7 +355,7 @@ void read_sensors(struct applesmc *smc, struct mfdconfig cfg)
             }
             else
             {
-                for (k = 0; k < 50; k++)
+                for (k = 0; k < MAXSENSORS; k++)
                 {
                     if (strcmp(cfg.profile->fanctrl[i].sensors[j], smc->sensors[k].key) == 0 && smc->sensors[k].blacklisted != true)
                     {

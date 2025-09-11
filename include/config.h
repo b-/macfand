@@ -16,6 +16,7 @@
 #define APPLESMC_ID		"applesmc"
 #define SENSKEY_MAXLEN	16
 #define MAXFANS         18
+#define MAXSENSORS      100
 #define MACHINESDIR     "/usr/local/macfand/machines"
 
 #define max(a,b)	(a > b ? a : b)
@@ -55,7 +56,7 @@ struct modelProfile
     {
         char *id;
         char *desc;
-    } sensordesc[50];
+    } sensordesc[MAXSENSORS];
 
     struct fan_desc
     {
