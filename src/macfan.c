@@ -82,6 +82,7 @@ void usage()
     printf("  -h   prints this message\n");
     printf("  -d   disables output formatting\n");
     printf("\nmacfand - Mac Fan Control Daemon\nCopyright 2022 (C) Aaron Blakely <aaron@ephasic.org>\n");
+    printf("github: https://github.com/ablakely/macfand\n");
     exit(-1);
 }
 
